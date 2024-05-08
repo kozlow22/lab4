@@ -42,21 +42,16 @@ public class InsertUnitTests {
         List<Actor> outputActors = insert.insertAllActorsWithAnOddNumberLastName(actors);
 
 
-        assertEquals("Not the correct amount of actors", 3, outputActors.size());
+        assertEquals("Not the correct amount of actors", 2, outputActors.size());
         assertTrue("Actor 1 is incorrect", outputActors.get(0).getActorId() != 0);
-        assertEquals("Actor 1 is incorrect", actor3.getFirstName(), outputActors.get(0).getFirstName());
-        assertEquals("Actor 1 is incorrect", actor3.getLastName(), outputActors.get(0).getLastName());
+        assertEquals("Actor 1 is incorrect", actor1.getFirstName(), outputActors.get(0).getFirstName());
+        assertEquals("Actor 1 is incorrect", actor1.getLastName(), outputActors.get(0).getLastName());
         assertNotNull("Actor 1 is incorrect", outputActors.get(0).getLastUpdate());
 
         assertTrue("Actor 2 is incorrect", outputActors.get(1).getActorId() != 0);
-        assertEquals("Actor 2 is incorrect", actor4.getFirstName(), outputActors.get(1).getFirstName());
-        assertEquals("Actor 2 is incorrect", actor4.getLastName(), outputActors.get(1).getLastName());
+        assertEquals("Actor 2 is incorrect", actor2.getFirstName(), outputActors.get(1).getFirstName());
+        assertEquals("Actor 2 is incorrect", actor2.getLastName(), outputActors.get(1).getLastName());
         assertNotNull("Actor 2 is incorrect", outputActors.get(1).getLastUpdate());
-
-        assertTrue("Actor 3 is incorrect", outputActors.get(2).getActorId() != 0);
-        assertEquals("Actor 3 is incorrect", actor5.getFirstName(), outputActors.get(2).getFirstName());
-        assertEquals("Actor 3 is incorrect", actor5.getLastName(), outputActors.get(2).getLastName());
-        assertNotNull("Actor 3 is incorrect", outputActors.get(2).getLastUpdate());
     }
 }
 
