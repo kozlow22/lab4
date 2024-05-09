@@ -112,7 +112,7 @@ public class PostgresDBAdapter extends AbstractDBAdapter {
                 "on (category.category_id = film_category.category_id)\n" +
                 "where category.name = ?";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(category));
+            statement.setString(1, category.getName());
             ResultSet results = statement.executeQuery();
             List<Film> films = new ArrayList<>();
             //Loop through all the results and create a new Film object to hold all its information
